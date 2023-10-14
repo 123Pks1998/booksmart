@@ -1,0 +1,33 @@
+import React from 'react'
+import Link from 'next/link'
+const htmlForgetPassword = () => {
+    return (
+        <section className="text-gray-600 body-font mb-28">
+            <div className="container px-5 py-4 mx-auto flex flex-wrap items-center">
+                <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                    <h1 className="title-font font-medium text-3xl capitalize text-gray-900">books are the bank of knowledge.</h1>
+                    <p className="leading-relaxed capitalize mt-4">If You Want To Talk With those Persons They does not exists.then it's Very Simple,just You Have To Read Them.</p>
+                </div>
+                <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <h2 className="text-gray-900 text-xl font-medium title-font mb-2">Forget your password</h2>
+                    <div className='flex justify-center'>
+                        <p className='mr-4 ml-0'>or</p>
+                        <Link href={'/auth/login'} className='font-bold hover:text-gray-900'> sign in</Link>
+                    </div>
+
+                    <div className="relative mb-4">
+                        <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
+                        <input type="email" id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                    </div>
+
+                    <div className='flex justify-center'>
+                        <button className="text-white bg-gray-500 border-0 py-1 pr-2 px-2 w-1/3  focus:outline-none hover:bg-gray-700 rounded text-lg">Button</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default htmlForgetPassword
