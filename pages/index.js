@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Product from '@/model/product'
 export default function Home({ products }) {
   // console.log(products)
   return (
@@ -56,11 +56,10 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps() {
-  const data = await fetch('http://localhost:3000/api/getproducts')
-  const products = await data.json()
-
+  let products = await Product.find()
   return {
-    props: products
+    props: { products: JSON.parse(JSON.stringify(products)) }
   }
+
 
 }
