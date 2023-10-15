@@ -55,7 +55,7 @@ export default function Home({ products }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let products = await Product.find()
   return {
     props: { products: JSON.parse(JSON.stringify(products)) }
