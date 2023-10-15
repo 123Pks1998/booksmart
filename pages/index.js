@@ -56,9 +56,11 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps() {
-  let products = await Product.find()
+  const data = await fetch(`${process.env.PUBLIC_HOST}/api/getproducts`)
+  const products = await data.json()
+
   return {
-    props: { products: JSON.parse(JSON.stringify(products)) }
+    props: products
   }
 
 
