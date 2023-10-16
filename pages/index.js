@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Product from '@/model/product'
+
 export default function Home({ products }) {
+
   // console.log(products)
   return (
     <div className='my-4'>
@@ -54,12 +55,19 @@ export default function Home({ products }) {
     </div>
   )
 }
-
 export async function getServerSideProps() {
-  let products = await Product.find()
+  //   // Fetch data from external API
+  const res = await fetch(`${process.env.PUBLIC_HOST}/api/getproducts`)
+  const data = await res.json()
   return {
-    props: { products: JSON.parse(JSON.stringify(products)) }
+    props: data
   }
-
-
 }
+
+// export async function getServerSideProps(req, resp) {
+//   let products = await Product.find()
+
+//   return {
+//     props: { products: JSON.parse(JSON.stringify(products)) }
+//   }
+// }
