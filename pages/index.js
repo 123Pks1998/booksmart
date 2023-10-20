@@ -64,10 +64,4 @@ export async function getServerSideProps() {
   }
 }
 
-// export async function getServerSideProps(req, resp) {
-//   let products = await Product.find()
 
-//   return {
-//     props: { products: JSON.parse(JSON.stringify(products)) }
-//   }
-// }
